@@ -1,0 +1,26 @@
+@import "../../../squares-core/styles/variables.scss";
+
+.settings {
+  &-wrapper {
+    overflow: overlay;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+  }
+  &-price {
+    background-color: $cellBGSettings;
+    padding: 16px 8px;
+    margin: 2px;
+    width: 20%;
+    flex-grow: 1;
+    border: 1px solid $text;
+    color: $text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: medium;
+    }
+  }
+}

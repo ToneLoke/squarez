@@ -1,0 +1,21 @@
+@import '../../../squares-core/styles/variables.scss';
+%border {
+  border-bottom: 4px solid $secondary;
+  border-top: 4px solid $secondary;
+  border-radius: 5px;
+}
+
+;
+.matches {
+  .title {
+    font-weight: bolder;
+    text-transform: uppercase;
+    border-radius: 5px;
+    align-self: center;
+    padding-bottom: 8px;
+    margin: 10px;
+  }
+  .wrapper {
+    overflow: overlay;
+  }
+}

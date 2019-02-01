@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+  .btn {
+    height: 25px;
+    border: 2px solid $text;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }

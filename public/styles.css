@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+.board-container {
+  position: relative; }
+  .board-container .board {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    .board-container .board .cell {
+      flex: 0 0 16%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 2px;
+      box-sizing: border-box;
+      font-size: calc(-5px + 10vmin); }
+      .board-container .board .cell span {
+        font-size: calc(2px + 2vmin); }
+      .board-container .board .cell:first-child {
+        visibility: hidden; }
+      .board-container .board .cell:nth-child(-n+6) > .item,
+      .board-container .board .cell:nth-child(6n+7) > .item {
+        background: #2b2b2b;
+        font-size: calc(-5px + 5vmin);
+        color: #bdbdbd;
+        font-weight: bold;
+        padding-bottom: 2px; }
+      .board-container .board .cell:before {
+        content: '';
+        display: table;
+        padding-top: 100%; }
+      .board-container .board .cell .item {
+        flex-grow: 1;
+        border: 1px solid #a7a8ac;
+        background: #717171;
+        color: #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .board-container .board .cell .item.empty {
+          background: #717171; }
+        .board-container .board .cell .item.pending {
+          background: #ffc61a; }
+        .board-container .board .cell .item.cancel {
+          background: #ffc61a; }
+        .board-container .board .cell .item.approved {
+          background: #ffbf00; }
+  .board-container .game-detail {
+    padding-bottom: 20px; }
+.match .info {
+  font-size: calc(10px + 2vmin);
+  color: #a7a8ac;
+  font-style: italic; }
+
+.match {
+  background-color: #717171;
+  margin: 10px;
+  font-size: 18px;
+  text-align: left; }
+  @media screen and (max-width: 320px) {
+    .match {
+      height: 90vh; } }
+  .match .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; }
+  .match .info {
+    display: none; }
+  .match .team-away, .match .team-home {
+    background-color: #181818;
+    padding: 10px; }
+.matches .title {
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-radius: 5px;
+  align-self: center;
+  padding-bottom: 8px;
+  margin: 10px; }
+
+.matches .wrapper {
+  overflow: overlay; }
+.btn {
+  height: 25px;
+  border: 2px solid #bdbdbd;
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center; }
+.step-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100vw; }
+  .step-container .step {
+    position: relative;
+    box-sizing: border-box;
+    color: #bdbdbd;
+    padding: 16px; }
+  .step-container .divider {
+    height: 3px;
+    background: #bdbdbd;
+    width: 100%;
+    height: 2px;
+    align-self: center; }
+.Input-wrapper {
+  display: flex;
+  justify-content: center;
+  border: 1px #bdbdbd solid;
+  margin: 10px; }
+  .Input-wrapper input {
+    flex-grow: 1;
+    color: #a7a8ac;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle; }
+    .Input-wrapper input::placeholder {
+      color: #a7a8ac; }
+.header {
+  background-color: #717171;
+  margin: 10px;
+  font-size: 20px;
+  text-align: left; }
+  .header .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; }
+  .header .label {
+    padding: 10px; }
+.Field-title {
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 100%;
+  align-self: center;
+  font-size: calc(18px + 2vmin);
+  padding-bottom: 8px; }
+.settings-wrapper {
+  overflow: overlay;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0px 10px; }
+
+.settings-price {
+  background-color: #2b2b2b;
+  padding: 16px 8px;
+  margin: 2px;
+  width: 20%;
+  flex-grow: 1;
+  border: 1px solid #bdbdbd;
+  color: #bdbdbd;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .settings-price span {
+    font-size: medium; }
+.setup {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: calc(26px + 2vmin);
+  height: 100vh;
+  width: 100vw;
+  background-color: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden; }
+  .setup .container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    color: #bdbdbd;
+    padding: 0 8px;
+    width: 100%; }
+    @media screen and (min-width: 320px) {
+      .setup .container {
+        flex-direction: column-reverse;
+        height: 90vh; } }

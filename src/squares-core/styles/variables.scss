@@ -1,0 +1,23 @@
+$device-small: 320px;
+$device-large: 1200px;
+// RGB COLOR PALET
+$alt1: rgba(147, 183, 190, 1);
+$alt2: rgba(182, 194, 217, 1);
+// $back: rgba(40, 44, 52, 1);
+$back:rgba(43, 43, 43, 1);
+// $secondary: rgba(255, 120, 96, 1);
+$secondary: rgba(167, 168, 172, 100);
+$primary: rgba(113, 113, 113, 100);
+$text: rgba(189, 189, 189, 100);
+$secondaryText: rgba(167, 168, 172, 100);
+// Cells
+$cellHeaderBG: rgba(43,43,43, 1);
+$cellFontSize: calc(-5px + 10vmin);
+$cellHeaderFontSize: calc(-5px + 5vmin);
+// Settings
+$cellBGSettings: rgba(43,43,43, 1);
+// $text: rgba(235, 235, 236, 1)
+// Inputs
+$input-text-inactive: $secondaryText;
+$input-text-active: $secondary;
+// END COLOR PALET

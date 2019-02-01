@@ -1,0 +1,29 @@
+@import '../../../../squares-core/styles/variables.scss';
+%secondary-text {
+  font-size: calc(10px + 2vmin);
+  color: $secondaryText;
+  font-style: italic;
+}
+.match{
+  background-color: $primary;
+  margin: 10px;
+  font-size: 18px;
+  text-align: left;
+  @media screen and (max-width: $device-small) {
+    height: 90vh;
+  }
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .info {
+    @extend %secondary-text;
+    display: none;
+  }
+  .team-away, .team-home {
+    background-color: #181818;
+    padding: 10px;
+  }
+}
