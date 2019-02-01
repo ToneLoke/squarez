@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../game';
-import getData from '../common/getData';
-import StaticContext from './StaticContext';
+import { SetupProvider, GameProvider, getData } from './common';
 
-const path = window.document.location.pathname;
+const path = window.document.location.pathname
+const Provider = path.indexOf('/setup') > -1 ? SetupProvider : GameProvider
 const promises = getData(path);
 const data = {};
 Promise.all(promises).then((responses) => {
@@ -14,12 +14,16 @@ Promise.all(promises).then((responses) => {
     if (r) Object.assign(data, r);
   });
 
-  ReactDOM.hydrate(
-    <StaticContext.Provider value={data}>
+  main(
+    <Provider value={data}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </StaticContext.Provider>,
+    </Provider>,
     document.getElementById('root'),
   );
 });
+
+function main(target, container) {
+  ReactDOM.hydrate(target, container);
+}

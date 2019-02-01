@@ -1,19 +1,20 @@
 import axios from 'axios';
 
-import './index.scss';
 //= ====================== API CALLS =======================
-export const API_URL = '/api/matches';
-// "http://api.sportradar.us/nfl/official/trial/v5/en/games/2018/PST/4/schedule.json?api_key=p3jrhz3b36atpuwr2d593jyq";
-// export const API_URL = 'http://api.sportradar.us/nfl/official/trial/v5/en/games/2018/REG/1/schedule.json?api_key=p3jrhz3b36atpuwr2d593jyq'
-export // TODO: GET YEAR FROM TODAYS DATE
+const API_URL = 'http://api.sportradar.us/nfl/official/trial/v5/en/games/2018/PST/4/schedule.json?api_key=p3jrhz3b36atpuwr2d593jyq';
+// TODO: GET YEAR FROM TODAYS DATE
 // FIGURE OUT REG OR POST SEASON
 // GET NFL WEEK
-const GET_GAMES = () => axios.get(API_URL).then(res => res.data);
+const getAllMatches = () => axios.get(API_URL).then(res => res.data);
+const getSingleMatch = () => axios.get(API_URL).then(res => res.data);
+const getBoard = () => axios.get(API_URL).then(res => res.data);
+const createBoard = () => axios.get(API_URL).then(res => res.data);
+const updateBoard = () => axios.get(API_URL).then(res => res.data);
 //= ====================== End API =======================
 //= ====================== Heloper Methods =======================
 // NOTE: generates game board 5 x 5
 // TODO: make dynamic
-export const generateSquares = num => (square) => {
+const generateSquares = num => (square) => {
   const data = [];
   let count = 0;
   const points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -33,3 +34,6 @@ export const generateSquares = num => (square) => {
   return iter(0);
 };
 //= ====================== End Heloper Methods =======================
+export default {
+  getAllMatches, getSingleMatch, getBoard, generateSquares, createBoard, updateBoard,
+}

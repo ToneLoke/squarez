@@ -1,4 +1,7 @@
 import { matchRoutes } from 'react-router-config';
+import helpers from './helpers';
+
+const { getAllMatches, getBoard } = helpers;
 
 const routes = [
   {
@@ -6,7 +9,13 @@ const routes = [
     loadData: undefined,
     routes: [
       {
-        path: '/',
+        loadData: getAllMatches,
+        path: '/setup',
+        exact: true,
+      },
+      {
+        loadData: getBoard,
+        path: '/board/:id',
         exact: true,
       },
     ],

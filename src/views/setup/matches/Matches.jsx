@@ -1,6 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { GET_GAMES } from '../../../squares-core';
-import Match from './match';
+import React, { useState, useEffect } from 'react';
+import Match from '../../squares-core/Match';
 import './Matches.scss';
 
 const Matches = () => {

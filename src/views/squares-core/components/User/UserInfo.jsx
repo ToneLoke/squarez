@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TextInput from '../../../squares-core/components/TextInput/TextInput';
-import Field from '../../../squares-core/components/Field/Field';
+import TextInput from './TextInput';
+import Field from './Field';
 
 const User = () => (
   <div className="user">
