@@ -6,8 +6,6 @@ import renderer from './renderer';
 import apiRouter from './routes';
 
 const PORT = 3000;
-
-// initialize the application and create the routes
 const app = express();
 
 app.use(bodyParser.json());
@@ -22,9 +20,9 @@ app.use('/api', apiRouter);
 app.use(express.static('public'));
 app.get('*', (req, res) => {
   fs.readFile('./src/server/index.html', 'utf8', (err, data) => {
-    const context = {};
-    renderer(data, req.path, context).then((html) => {
-      if (context.notFound) {
+    const routeContext = {};
+    renderer(data, req.path, routeContext).then((html) => {
+      if (routeContext.notFound) {
         res.status(404);
       }
       res.send(html);

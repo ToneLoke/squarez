@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TextInput from '../../../squares-core/components/TextInput';
-import Field from '../../../squares-core/components/Field';
+import { TextInput, Field } from '../../squares-core/components';
 import './Settings.scss';
 
 const prices = [1, 5, 10, 15, 20, 25];

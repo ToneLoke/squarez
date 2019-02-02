@@ -10,16 +10,19 @@ export default function renderer(html, path, context) {
   const promises = getData(path);
   context.data = {};
 
+  //= ====================== render response to client after api call =======================
   return Promise.all(promises).then((responses) => {
     responses.forEach((r) => {
       if (r) Object.assign(context.data, r);
     });
-
+    //= ====================== create stringified react =======================
     const serverHtml = ReactDOM.renderToString(
       <StaticRouter location={path} context={context}>
         <App />
       </StaticRouter>,
     );
+
+    //= ====================== find and replace old html with new =======================
     const regex = /(<div id="root">)(<\/div>)/;
     html = html.replace(regex, (original, div1, div2) => div1 + serverHtml + div2);
     const helmet = Helmet.renderStatic();

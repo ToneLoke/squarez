@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Matches from './matches'
 import Settings from './settings'
-import User from './user'
-import { GameSetupContext, actions } from './common'
+import User from '../squares-core/components'
+import { GameSetupContext, actions } from '../../common'
 
 import './Setup.scss'
 

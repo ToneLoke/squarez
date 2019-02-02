@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { generateSquares } from '../../squares-core';
+import { helpers } from '../../common';
 import './Board.scss';
-import '../setup/matches/match/Match.scss';
-import Match from '../setup/matches/match';
+import '../squares-core/components/match/Match.scss';
+import { Match } from '../squares-core/components';
+
+const { generateSquares } = helpers;
 
 const SquareRenderer = generateSquares(36);
 

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../game';
-import { SetupProvider, GameProvider, getData } from './common';
+import { SetupProvider, GameProvider, getData } from '../common';
 
 const path = window.document.location.pathname
 const Provider = path.indexOf('/setup') > -1 ? SetupProvider : GameProvider

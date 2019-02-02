@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import TextInput from './TextInput';
-import Field from './Field';
+import TextInput from '../TextInput';
+import Field from '../Field';
 
-const User = () => (
+const User = ({ type }) => (
   <div className="user">
     <Field label="Payout Id">
       <TextInput type="text" placeholder="@toneloke" disabled />

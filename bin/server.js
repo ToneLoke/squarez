@@ -86,6 +86,41 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/common/GameSetupStore.js":
+/*!**************************************!*\
+  !*** ./src/common/GameSetupStore.js ***!
+  \**************************************/
+/*! exports provided: default, GameSetupContext, GameSetupConsumer, actions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return GameSetupProvider; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GameSetupContext\", function() { return GameSetupContext; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GameSetupConsumer\", function() { return GameSetupConsumer; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"actions\", function() { return actions; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\n\n// import { helpers } from '.';\n\nvar GameSetupContext = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"createContext\"])();\n\nvar initialState = {\n  match: {\n    id: null, home: {}, away: {}, network: null\n  },\n  matches: [],\n  price: 5,\n  players: 25,\n  host: { id: null, alias: null },\n  error: null\n};\n\nvar actions = {\n  SET_MATCH: 'SET_MATCH',\n  SET_PRICE: 'SET_PRICE',\n  SET_HOST: 'SET_HOST',\n  SUBMIT_GAME: 'SUBMIT_GAME'\n};\n\nvar reducer = function reducer(state, action) {\n  switch (action.type) {\n    case 'SET_MATCH':\n      return Object.assign({}, state, { match: Object.assign({}, state.match, action.payload) });\n    case 'SET_PRICE':\n      return Object.assign({}, state, { price: action.payload });\n    case 'SET_HOST':\n      return Object.assign({}, state, { host: Object.assign({}, state.host, action.payload) });\n    case 'SUBMIT_GAME':\n      console.log('SUBMIT_GAME');\n      return Object.assign({}, initialState);\n    default:\n      return state;\n  }\n};\n\n//= ====================== GAME SETUP HOC =======================\nfunction GameSetupProvider(_ref) {\n  var children = _ref.children,\n      matches = _ref.value;\n\n  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useReducer\"])(reducer, Object.assign({}, initialState, { matches: matches })),\n      _useReducer2 = _slicedToArray(_useReducer, 2),\n      state = _useReducer2[0],\n      dispatch = _useReducer2[1];\n\n  var value = { state: state, dispatch: dispatch };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    GameSetupContext.Provider,\n    { value: value },\n    children\n  );\n}\n//= ====================== END OF GAME SETUP =======================\n\n//= ====================== NOTE: For components to use =======================\nvar GameSetupConsumer = GameSetupContext.consumer;\n\n\n\n\n//# sourceURL=webpack:///./src/common/GameSetupStore.js?");
+
+/***/ }),
+
+/***/ "./src/common/LiveGameStore.js":
+/*!*************************************!*\
+  !*** ./src/common/LiveGameStore.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// import React, { createContext, useReducer } from 'react';\n\n// const GameSetupContext = createContext();\n\n// const initialState = {\n//   match: { home: {}, away: {} },\n//   settings: { price: 5, players: 25, exp: '' },\n//   host: { id: null, alias: null },\n//   step: 'matches',\n//   // NOTE: this board is pre activation\n//   board: { squares: {}, full: false },\n// };\n\n// //= ====================== STEP SAMPLE REDUCER PATTERN w/Context =======================\n// const actions = {\n//   step: { NEXT_STEP: 'NEXT_STEP' },\n// };\n\n// const changeStep = (state, step) => ({ ...state, step });\n// //= ====================== End of Step Actions/Reducers =======================\n\n// //= ====================== SETUP ALL REDUCERS =======================\n// const GameSetupReducers = (state, action) => {\n//   switch (action.type) {\n//   case actions.step.NEXT_STEP:\n//     return changeStep(state, action.payload);\n//   default:\n//     return state;\n//   }\n// };\n// // = ====================== END OF ALL REDUCERS =======================\n\n// //= ====================== GAME SETUP HOC =======================\n// const GameSetupProvider = ({ children }) => {\n//   const [state, dispatch] = useReducer(GameSetupReducers, initialState);\n//   const value = {\n//     state,\n//     dispatch,\n//   };\n\n//   return (\n//     <GameSetupContext.Provider value={value}>\n//       {children}\n//     </GameSetupContext.Provider>\n//   );\n// };\n// //= ====================== END OF GAME SETUP =======================\n\n// const { consumer: GameSetupConsumer } = GameSetupContext;\n\n// export {\n//   GameSetupContext, GameSetupProvider, GameSetupConsumer, actions,\n// };\n\n//# sourceURL=webpack:///./src/common/LiveGameStore.js?");
+
+/***/ }),
+
+/***/ "./src/common/NotFound.js":
+/*!********************************!*\
+  !*** ./src/common/NotFound.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return NotFound; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* eslint-disable no-param-reassign */\n\n\nfunction NotFound(_ref) {\n  var staticContext = _ref.staticContext;\n\n  if (staticContext) {\n    staticContext.notFound = true;\n  }\n  return (\n    //= ====================== 404 PAGE =======================\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      null,\n      'Not found'\n    )\n  );\n}\n\n//# sourceURL=webpack:///./src/common/NotFound.js?");
+
+/***/ }),
+
 /***/ "./src/common/getData.js":
 /*!*******************************!*\
   !*** ./src/common/getData.js ***!
@@ -110,6 +145,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 
 /***/ }),
 
+/***/ "./src/common/index.js":
+/*!*****************************!*\
+  !*** ./src/common/index.js ***!
+  \*****************************/
+/*! exports provided: helpers, getData, NotFound, SetupProvider, GameProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./src/common/helpers.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"helpers\", function() { return _helpers__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getData */ \"./src/common/getData.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return _getData__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NotFound */ \"./src/common/NotFound.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"NotFound\", function() { return _NotFound__WEBPACK_IMPORTED_MODULE_2__[\"default\"]; });\n\n/* harmony import */ var _GameSetupStore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GameSetupStore */ \"./src/common/GameSetupStore.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"SetupProvider\", function() { return _GameSetupStore__WEBPACK_IMPORTED_MODULE_3__[\"default\"]; });\n\n/* harmony import */ var _LiveGameStore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LiveGameStore */ \"./src/common/LiveGameStore.js\");\n/* harmony import */ var _LiveGameStore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_LiveGameStore__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, \"GameProvider\", function() { return _LiveGameStore__WEBPACK_IMPORTED_MODULE_4___default.a; });\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/common/index.js?");
+
+/***/ }),
+
 /***/ "./src/common/sample.json":
 /*!********************************!*\
   !*** ./src/common/sample.json ***!
@@ -129,7 +176,7 @@ eval("module.exports = {\"id\":\"8e45fe2d-fb95-4504-845d-7c815623ccd6\",\"year\"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _views_board__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/board */ \"./src/views/board/index.js\");\n/* harmony import */ var _views_setup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/setup */ \"./src/views/setup/index.js\");\n\n\n\n\n\nfunction App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'App' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Switch\"],\n      null,\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"IndexRedirect\"], { to: '/setup' }),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Route\"], { exact: true, path: '/setup', component: _views_setup__WEBPACK_IMPORTED_MODULE_3__[\"default\"] }),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Route\"], { exact: true, path: '/board/:Id', component: _views_board__WEBPACK_IMPORTED_MODULE_2__[\"default\"] })\n    )\n  );\n}\n\n//# sourceURL=webpack:///./src/game/Game.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _views_board__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/board */ \"./src/views/board/index.js\");\n/* harmony import */ var _views_setup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/setup */ \"./src/views/setup/Setup.jsx\");\n\n\n\n\n\nfunction App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'App' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Switch\"],\n      null,\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"IndexRedirect\"], { to: '/setup' }),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Route\"], { exact: true, path: '/setup', component: _views_setup__WEBPACK_IMPORTED_MODULE_3__[\"default\"] }),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Route\"], { exact: true, path: '/board/:Id', component: _views_board__WEBPACK_IMPORTED_MODULE_2__[\"default\"] })\n    )\n  );\n}\n\n//# sourceURL=webpack:///./src/game/Game.jsx?");
 
 /***/ }),
 
@@ -141,7 +188,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fs */ \"fs\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! body-parser */ \"body-parser\");\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(body_parser__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderer */ \"./src/server/renderer.js\");\n/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes */ \"./src/server/routes.js\");\n\n\n\n\n\n\n\nvar PORT = 3000;\n\n// initialize the application and create the routes\nvar app = express__WEBPACK_IMPORTED_MODULE_0___default()();\n\napp.use(body_parser__WEBPACK_IMPORTED_MODULE_3___default.a.json());\napp.use(body_parser__WEBPACK_IMPORTED_MODULE_3___default.a.urlencoded({ extended: false }));\n\n// Mongoose Connection (messages is our database)\nmongoose__WEBPACK_IMPORTED_MODULE_2___default.a.connect('mongodb://localhost/messages');\n\n// API ROUTES\napp.use('/api', _routes__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\n\napp.use(express__WEBPACK_IMPORTED_MODULE_0___default.a.static('public'));\napp.get('*', function (req, res) {\n  fs__WEBPACK_IMPORTED_MODULE_1___default.a.readFile('./src/server/index.html', 'utf8', function (err, data) {\n    var context = {};\n    Object(_renderer__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(data, req.path, context).then(function (html) {\n      if (context.notFound) {\n        res.status(404);\n      }\n      res.send(html);\n    });\n  });\n});\n\napp.listen(PORT);\n\n//# sourceURL=webpack:///./src/server/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fs */ \"fs\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! body-parser */ \"body-parser\");\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(body_parser__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderer */ \"./src/server/renderer.js\");\n/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes */ \"./src/server/routes.js\");\n\n\n\n\n\n\n\nvar PORT = 3000;\nvar app = express__WEBPACK_IMPORTED_MODULE_0___default()();\n\napp.use(body_parser__WEBPACK_IMPORTED_MODULE_3___default.a.json());\napp.use(body_parser__WEBPACK_IMPORTED_MODULE_3___default.a.urlencoded({ extended: false }));\n\n// Mongoose Connection (messages is our database)\nmongoose__WEBPACK_IMPORTED_MODULE_2___default.a.connect('mongodb://localhost/messages');\n\n// API ROUTES\napp.use('/api', _routes__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\n\napp.use(express__WEBPACK_IMPORTED_MODULE_0___default.a.static('public'));\napp.get('*', function (req, res) {\n  fs__WEBPACK_IMPORTED_MODULE_1___default.a.readFile('./src/server/index.html', 'utf8', function (err, data) {\n    var routeContext = {};\n    Object(_renderer__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(data, req.path, routeContext).then(function (html) {\n      if (routeContext.notFound) {\n        res.status(404);\n      }\n      res.send(html);\n    });\n  });\n});\n\napp.listen(PORT);\n\n//# sourceURL=webpack:///./src/server/index.js?");
 
 /***/ }),
 
@@ -153,7 +200,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var expr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return renderer; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ \"react-helmet\");\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../game */ \"./src/game/Game.jsx\");\n/* harmony import */ var _common_getData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/getData */ \"./src/common/getData.js\");\n/* eslint-disable no-param-reassign */\n\n\n\n // SEO && TEXT DATA\n\n\n\nfunction renderer(html, path, context) {\n  var promises = Object(_common_getData__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(path);\n  context.data = {};\n\n  return Promise.all(promises).then(function (responses) {\n    responses.forEach(function (r) {\n      if (r) Object.assign(context.data, r);\n    });\n\n    var serverHtml = react_dom_server__WEBPACK_IMPORTED_MODULE_1___default.a.renderToString(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"StaticRouter\"],\n      { location: path, context: context },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)\n    ));\n    var regex = /(<div id=\"root\">)(<\\/div>)/;\n    html = html.replace(regex, function (original, div1, div2) {\n      return div1 + serverHtml + div2;\n    });\n    var helmet = react_helmet__WEBPACK_IMPORTED_MODULE_3___default.a.renderStatic();\n    var head = helmet.title.toString() + helmet.meta.toString();\n    var index = html.indexOf('</head>');\n    var html1 = html.slice(0, index);\n    var html2 = html.slice(index);\n    return html1 + head + html2;\n  });\n}\n\n//# sourceURL=webpack:///./src/server/renderer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return renderer; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ \"react-helmet\");\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../game */ \"./src/game/Game.jsx\");\n/* harmony import */ var _common_getData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/getData */ \"./src/common/getData.js\");\n/* eslint-disable no-param-reassign */\n\n\n\n // SEO && TEXT DATA\n\n\n\nfunction renderer(html, path, context) {\n  var promises = Object(_common_getData__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(path);\n  context.data = {};\n\n  //= ====================== render response to client after api call =======================\n  return Promise.all(promises).then(function (responses) {\n    responses.forEach(function (r) {\n      if (r) Object.assign(context.data, r);\n    });\n    //= ====================== create stringified react =======================\n    var serverHtml = react_dom_server__WEBPACK_IMPORTED_MODULE_1___default.a.renderToString(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"StaticRouter\"],\n      { location: path, context: context },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)\n    ));\n\n    //= ====================== find and replace old html with new =======================\n    var regex = /(<div id=\"root\">)(<\\/div>)/;\n    html = html.replace(regex, function (original, div1, div2) {\n      return div1 + serverHtml + div2;\n    });\n    var helmet = react_helmet__WEBPACK_IMPORTED_MODULE_3___default.a.renderStatic();\n    var head = helmet.title.toString() + helmet.meta.toString();\n    var index = html.indexOf('</head>');\n    var html1 = html.slice(0, index);\n    var html2 = html.slice(index);\n    return html1 + head + html2;\n  });\n}\n\n//# sourceURL=webpack:///./src/server/renderer.js?");
 
 /***/ }),
 
@@ -166,133 +213,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _common_sample_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/sample.json */ \"./src/common/sample.json\");\nvar _common_sample_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../common/sample.json */ \"./src/common/sample.json\", 1);\n\n\n\nvar apiRouter = Object(express__WEBPACK_IMPORTED_MODULE_0__[\"Router\"])();\n\napiRouter.route('/matches').get(function (req, res) {\n  res.status(200).json(_common_sample_json__WEBPACK_IMPORTED_MODULE_1__);\n});\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (apiRouter);\n\n//# sourceURL=webpack:///./src/server/routes.js?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Button/Button.jsx":
-/*!*******************************************************!*\
-  !*** ./src/squares-core/components/Button/Button.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Button_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button.scss */ \"./src/squares-core/components/Button/Button.scss\");\n/* harmony import */ var _Button_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Button_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var children = _ref.children;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'btn' },\n    children\n  );\n});\n\n//# sourceURL=webpack:///./src/squares-core/components/Button/Button.jsx?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Button/Button.scss":
-/*!********************************************************!*\
-  !*** ./src/squares-core/components/Button/Button.scss ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./src/squares-core/components/Button/Button.scss?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Field/Field.jsx":
-/*!*****************************************************!*\
-  !*** ./src/squares-core/components/Field/Field.jsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Header */ \"./src/squares-core/components/Header/Header.jsx\");\n/* harmony import */ var _Field_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Field.scss */ \"./src/squares-core/components/Field/Field.scss\");\n/* harmony import */ var _Field_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Field_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar Field = function Field(_ref) {\n  var children = _ref.children,\n      type = _ref.type,\n      label = _ref.label;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'Field ' + type },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { name: label }),\n    children\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Field);\n\n//# sourceURL=webpack:///./src/squares-core/components/Field/Field.jsx?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Field/Field.scss":
-/*!******************************************************!*\
-  !*** ./src/squares-core/components/Field/Field.scss ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./src/squares-core/components/Field/Field.scss?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Header/Header.jsx":
-/*!*******************************************************!*\
-  !*** ./src/squares-core/components/Header/Header.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ \"moment\");\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.scss */ \"./src/squares-core/components/Header/Header.scss\");\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Header_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar Header = function Header(_ref) {\n  var name = _ref.name;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'header' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'label' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'div',\n        { className: 'team-name' },\n        name\n      )\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Header);\n\n//# sourceURL=webpack:///./src/squares-core/components/Header/Header.jsx?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Header/Header.scss":
-/*!********************************************************!*\
-  !*** ./src/squares-core/components/Header/Header.scss ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./src/squares-core/components/Header/Header.scss?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/Icon/Icon.jsx":
-/*!***************************************************!*\
-  !*** ./src/squares-core/components/Icon/Icon.jsx ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Icon; });\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ \"prop-types\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nfunction Icon(_ref) {\n  var icons = _ref.icons,\n      name = _ref.name;\n\n  var icon = icons[name];\n  var findicon = function findicon() {\n    switch (icon) {\n      case 'matches':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      case 'settings':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      case 'preview':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      default:\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n    }\n  };\n  var IconRenderer = findicon(icon);\n  return IconRenderer;\n}\n\nIcon.displayName = 'Icon';\nIcon.propTypes = {\n  icon: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.array, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string])\n};\nIcon.defaultProps = {\n  icon: null\n};\n\n//# sourceURL=webpack:///./src/squares-core/components/Icon/Icon.jsx?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/TextInput/TextInput.jsx":
-/*!*************************************************************!*\
-  !*** ./src/squares-core/components/TextInput/TextInput.jsx ***!
-  \*************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _TextInput_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextInput.scss */ \"./src/squares-core/components/TextInput/TextInput.scss\");\n/* harmony import */ var _TextInput_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TextInput_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n// NOTE: button is disabled unless needed in the future\nvar TextInput = function TextInput(props) {\n  var type = props.type;\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'Input-wrapper ' + type },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', props)\n  );\n};\n\nvar arePropsEqual = function arePropsEqual(prevProps, nextProps) {\n  return prevProps.value === nextProps.value;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react__WEBPACK_IMPORTED_MODULE_0__[\"memo\"])(TextInput, arePropsEqual));\n\n//# sourceURL=webpack:///./src/squares-core/components/TextInput/TextInput.jsx?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/TextInput/TextInput.scss":
-/*!**************************************************************!*\
-  !*** ./src/squares-core/components/TextInput/TextInput.scss ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./src/squares-core/components/TextInput/TextInput.scss?");
-
-/***/ }),
-
-/***/ "./src/squares-core/components/index.js":
-/*!**********************************************!*\
-  !*** ./src/squares-core/components/index.js ***!
-  \**********************************************/
-/*! exports provided: Icon, Button */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Icon */ \"./src/squares-core/components/Icon/Icon.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Icon\", function() { return _Icon__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ \"./src/squares-core/components/Button/Button.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Button\", function() { return _Button__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n\n\n\n//# sourceURL=webpack:///./src/squares-core/components/index.js?");
-
-/***/ }),
-
-/***/ "./src/squares-core/index.js":
-/*!***********************************!*\
-  !*** ./src/squares-core/index.js ***!
-  \***********************************/
-/*! exports provided: GET_MATCHES, generateSquares */
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/toneloke/Documents/Workspace/squarez/src/squares-core/index.js'\");\n\n//# sourceURL=webpack:///./src/squares-core/index.js?");
 
 /***/ }),
 
@@ -315,7 +235,7 @@ eval("\n\n//# sourceURL=webpack:///./src/views/board/Board.scss?");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../squares-core */ \"./src/squares-core/index.js\");\n/* harmony import */ var _Board_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Board.scss */ \"./src/views/board/Board.scss\");\n/* harmony import */ var _Board_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Board_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _setup_matches_match_Match_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../setup/matches/match/Match.scss */ \"./src/views/setup/matches/match/Match.scss\");\n/* harmony import */ var _setup_matches_match_Match_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_setup_matches_match_Match_scss__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _setup_matches_match__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../setup/matches/match */ \"./src/views/setup/matches/match/Match.jsx\");\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\n\n\n\n\n\n\nvar SquareRenderer = Object(_squares_core__WEBPACK_IMPORTED_MODULE_1__[\"generateSquares\"])(36);\n\nfunction lookupStatus(status) {\n  var squareStates = ['empty', 'pending', 'approved', 'cancel'];\n  return squareStates[status];\n}\n\nvar InnerSquare = function InnerSquare(_ref) {\n  var data = _ref.data;\n\n  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(0),\n      _useState2 = _slicedToArray(_useState, 2),\n      status = _useState2[0],\n      setStatus = _useState2[1];\n\n  var squareStatus = lookupStatus(status);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    {\n      className: 'item ' + squareStatus,\n      'data-status': squareStatus,\n      onClick: function onClick() {\n        return setStatus(status + 1);\n      },\n      role: 'button'\n    },\n    data\n  );\n};\n\nvar Square = function Square(data, boxId) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'cell', key: boxId, id: boxId },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InnerSquare, { data: data })\n  );\n};\n\nvar board = SquareRenderer(Square);\n\nvar GameBoard = function GameBoard() {\n  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(board),\n      _useState4 = _slicedToArray(_useState3, 2),\n      squares = _useState4[0],\n      setSquares = _useState4[1];\n\n  // TODO: dynamically create\n\n\n  var game = {\n    scheduled: '',\n    broadcast: '',\n    scoring: '',\n    home: { name: 'Los Angeles Rams' },\n    away: { name: 'New England Patriots' }\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'board-container' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_setup_matches_match__WEBPACK_IMPORTED_MODULE_4__[\"default\"], game),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'board' },\n      squares\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GameBoard);\n\n//# sourceURL=webpack:///./src/views/board/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common */ \"./src/common/index.js\");\n/* harmony import */ var _Board_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Board.scss */ \"./src/views/board/Board.scss\");\n/* harmony import */ var _Board_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Board_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _squares_core_components_match_Match_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../squares-core/components/match/Match.scss */ \"./src/views/squares-core/components/match/Match.scss\");\n/* harmony import */ var _squares_core_components_match_Match_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_squares_core_components_match_Match_scss__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _squares_core_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../squares-core/components */ \"./src/views/squares-core/components/index.js\");\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\n\n\n\n\n\n\nvar generateSquares = _common__WEBPACK_IMPORTED_MODULE_1__[\"helpers\"].generateSquares;\n\n\nvar SquareRenderer = generateSquares(36);\n\nfunction lookupStatus(status) {\n  var squareStates = ['empty', 'pending', 'approved', 'cancel'];\n  return squareStates[status];\n}\n\nvar InnerSquare = function InnerSquare(_ref) {\n  var data = _ref.data;\n\n  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(0),\n      _useState2 = _slicedToArray(_useState, 2),\n      status = _useState2[0],\n      setStatus = _useState2[1];\n\n  var squareStatus = lookupStatus(status);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    {\n      className: 'item ' + squareStatus,\n      'data-status': squareStatus,\n      onClick: function onClick() {\n        return setStatus(status + 1);\n      },\n      role: 'button'\n    },\n    data\n  );\n};\n\nvar Square = function Square(data, boxId) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'cell', key: boxId, id: boxId },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InnerSquare, { data: data })\n  );\n};\n\nvar board = SquareRenderer(Square);\n\nvar GameBoard = function GameBoard() {\n  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(board),\n      _useState4 = _slicedToArray(_useState3, 2),\n      squares = _useState4[0],\n      setSquares = _useState4[1];\n\n  // TODO: dynamically create\n\n\n  var game = {\n    scheduled: '',\n    broadcast: '',\n    scoring: '',\n    home: { name: 'Los Angeles Rams' },\n    away: { name: 'New England Patriots' }\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'board-container' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_4__[\"Match\"], game),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'board' },\n      squares\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GameBoard);\n\n//# sourceURL=webpack:///./src/views/board/index.js?");
 
 /***/ }),
 
@@ -327,7 +247,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./matches */ \"./src/views/setup/matches/Matches.jsx\");\n/* harmony import */ var _stepper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stepper */ \"./src/views/setup/stepper/Stepper.jsx\");\n/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings */ \"./src/views/setup/settings/Settings.jsx\");\n/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ \"./src/views/setup/user/UserInfo.jsx\");\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../board */ \"./src/views/board/index.js\");\n/* harmony import */ var _SetupContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SetupContext */ \"./src/views/setup/SetupContext.js\");\n/* harmony import */ var _Setup_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Setup.scss */ \"./src/views/setup/Setup.scss\");\n/* harmony import */ var _Setup_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Setup_scss__WEBPACK_IMPORTED_MODULE_7__);\n\n\n\n\n\n\n\n\n\n\nvar Setup = function Setup() {\n  // Import the store\n  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useContext\"])(_SetupContext__WEBPACK_IMPORTED_MODULE_6__[\"GameSetupContext\"]),\n      state = _useContext.state,\n      dispatch = _useContext.dispatch;\n\n  var step = state.step;\n  var NEXT_STEP = _SetupContext__WEBPACK_IMPORTED_MODULE_6__[\"actions\"].step.NEXT_STEP;\n\n  var setStep = function setStep(payload) {\n    return dispatch({ type: NEXT_STEP, payload: payload });\n  };\n\n  var steps = {\n    matches: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_matches__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null),\n    preview: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_board__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null),\n    settings: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_settings__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null),\n    host: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'setup' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'container' },\n      steps[step]\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stepper__WEBPACK_IMPORTED_MODULE_2__[\"default\"], { step: step, onChange: setStep })\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Setup);\n\n//# sourceURL=webpack:///./src/views/setup/Setup.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./matches */ \"./src/views/setup/matches/Matches.jsx\");\n/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./settings */ \"./src/views/setup/settings/Settings.jsx\");\n/* harmony import */ var _squares_core_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../squares-core/components */ \"./src/views/squares-core/components/index.js\");\n/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../common */ \"./src/common/index.js\");\n/* harmony import */ var _Setup_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Setup.scss */ \"./src/views/setup/Setup.scss\");\n/* harmony import */ var _Setup_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Setup_scss__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\n\nvar Setup = function Setup() {\n  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useContext\"])(_common__WEBPACK_IMPORTED_MODULE_4__[\"GameSetupContext\"]),\n      dispatch = _useContext.dispatch;\n\n  var handleSubmit = function handleSubmit() {\n    return dispatch({ type: _common__WEBPACK_IMPORTED_MODULE_4__[\"actions\"].SUBMIT_GAME, payload: null });\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'setup' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'container' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_matches__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_settings__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'div',\n        { onClick: handleSubmit, role: 'button' },\n        'Create SQuares'\n      )\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Setup);\n\n//# sourceURL=webpack:///./src/views/setup/Setup.jsx?");
 
 /***/ }),
 
@@ -342,29 +262,6 @@ eval("\n\n//# sourceURL=webpack:///./src/views/setup/Setup.scss?");
 
 /***/ }),
 
-/***/ "./src/views/setup/SetupContext.js":
-/*!*****************************************!*\
-  !*** ./src/views/setup/SetupContext.js ***!
-  \*****************************************/
-/*! exports provided: GameSetupContext, GameSetupProvider, GameSetupConsumer, actions */
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/toneloke/Documents/Workspace/squarez/src/views/setup/SetupContext.js'\");\n\n//# sourceURL=webpack:///./src/views/setup/SetupContext.js?");
-
-/***/ }),
-
-/***/ "./src/views/setup/index.js":
-/*!**********************************!*\
-  !*** ./src/views/setup/index.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Setup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Setup */ \"./src/views/setup/Setup.jsx\");\n/* harmony import */ var _SetupContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SetupContext */ \"./src/views/setup/SetupContext.js\");\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    _SetupContext__WEBPACK_IMPORTED_MODULE_2__[\"GameSetupProvider\"],\n    null,\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Setup__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null)\n  );\n});\n\n//# sourceURL=webpack:///./src/views/setup/index.js?");
-
-/***/ }),
-
 /***/ "./src/views/setup/matches/Matches.jsx":
 /*!*********************************************!*\
   !*** ./src/views/setup/matches/Matches.jsx ***!
@@ -373,7 +270,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../squares-core */ \"./src/squares-core/index.js\");\n/* harmony import */ var _match__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./match */ \"./src/views/setup/matches/match/Match.jsx\");\n/* harmony import */ var _Matches_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Matches.scss */ \"./src/views/setup/matches/Matches.scss\");\n/* harmony import */ var _Matches_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Matches_scss__WEBPACK_IMPORTED_MODULE_3__);\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\n\n\n\n\n\nvar Matches = function Matches() {\n  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(null),\n      _useState2 = _slicedToArray(_useState, 2),\n      games = _useState2[0],\n      setGames = _useState2[1];\n\n  // const fetchGames = async () => {\n  //   try {\n  //     const {\n  //       week: { games }\n  //     } = await GET_GAMES();\n  //     setGames(games);\n  //   } catch (error) {\n  //     console.error(\"SPORTS API -\", error);\n  //   }\n  // };\n\n  // useEffect(() => {\n  //   fetchGames();\n  // }, []);\n  // Not sure if we need labels. games dont have labels. the original game doesn't either.\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'matches' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'wrapper' },\n      games && games.map(function (game) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_match__WEBPACK_IMPORTED_MODULE_2__[\"default\"], _extends({ key: game.id }, game));\n      })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Matches);\n\n//# sourceURL=webpack:///./src/views/setup/matches/Matches.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../squares-core/components */ \"./src/views/squares-core/components/index.js\");\n/* harmony import */ var _Matches_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Matches.scss */ \"./src/views/setup/matches/Matches.scss\");\n/* harmony import */ var _Matches_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Matches_scss__WEBPACK_IMPORTED_MODULE_2__);\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\n\n\n\n\nvar Matches = function Matches() {\n  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(null),\n      _useState2 = _slicedToArray(_useState, 2),\n      games = _useState2[0],\n      setGames = _useState2[1];\n\n  // const fetchGames = async () => {\n  //   try {\n  //     const {\n  //       week: { games }\n  //     } = await GET_GAMES();\n  //     setGames(games);\n  //   } catch (error) {\n  //     console.error(\"SPORTS API -\", error);\n  //   }\n  // };\n\n  // useEffect(() => {\n  //   fetchGames();\n  // }, []);\n  // Not sure if we need labels. games dont have labels. the original game doesn't either.\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'matches' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'wrapper' },\n      games && games.map(function (game) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"Match\"], _extends({ key: game.id }, game));\n      })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Matches);\n\n//# sourceURL=webpack:///./src/views/setup/matches/Matches.jsx?");
 
 /***/ }),
 
@@ -388,29 +285,6 @@ eval("\n\n//# sourceURL=webpack:///./src/views/setup/matches/Matches.scss?");
 
 /***/ }),
 
-/***/ "./src/views/setup/matches/match/Match.jsx":
-/*!*************************************************!*\
-  !*** ./src/views/setup/matches/match/Match.jsx ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ \"moment\");\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Match_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Match.scss */ \"./src/views/setup/matches/match/Match.scss\");\n/* harmony import */ var _Match_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Match_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n// import PatriotsLogo from '../../../../../..fassets/patriots.svg';\n// import RamsLogo from '../../../../../assets/rams.svg';\n\n\nvar Team = function Team(_ref) {\n  var name = _ref.name;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'team-name' },\n    name\n  );\n};\n\nvar Match = function Match(_ref2) {\n  var scheduled = _ref2.scheduled,\n      broadcast = _ref2.broadcast,\n      scoring = _ref2.scoring,\n      home = _ref2.home,\n      away = _ref2.away;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'match' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'team-away' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Team, away)\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'span',\n      { className: 'info' },\n      '@'\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'team-home' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Team, home)\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'info' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'span',\n        null,\n        moment__WEBPACK_IMPORTED_MODULE_1___default()(scheduled).format('MMMM Do, h:mm a')\n      ),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'span',\n        null,\n        broadcast.network\n      )\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Match);\n\n//# sourceURL=webpack:///./src/views/setup/matches/match/Match.jsx?");
-
-/***/ }),
-
-/***/ "./src/views/setup/matches/match/Match.scss":
-/*!**************************************************!*\
-  !*** ./src/views/setup/matches/match/Match.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./src/views/setup/matches/match/Match.scss?");
-
-/***/ }),
-
 /***/ "./src/views/setup/settings/Settings.jsx":
 /*!***********************************************!*\
   !*** ./src/views/setup/settings/Settings.jsx ***!
@@ -419,7 +293,7 @@ eval("\n\n//# sourceURL=webpack:///./src/views/setup/matches/match/Match.scss?")
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core_components_TextInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../squares-core/components/TextInput */ \"./src/squares-core/components/TextInput/TextInput.jsx\");\n/* harmony import */ var _squares_core_components_Field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../squares-core/components/Field */ \"./src/squares-core/components/Field/Field.jsx\");\n/* harmony import */ var _Settings_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Settings.scss */ \"./src/views/setup/settings/Settings.scss\");\n/* harmony import */ var _Settings_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Settings_scss__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nvar prices = [1, 5, 10, 15, 20, 25];\n\nvar Amount = function Amount(_ref) {\n  var amount = _ref.amount;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { key: amount, className: 'settings-price' },\n    amount\n  );\n};\n\nvar Settings = function Settings() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'settings' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components_Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Bounty Amount' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'div',\n        { className: 'settings-wrapper' },\n        prices.map(function (a) {\n          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Amount, { amount: a });\n        })\n      )\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components_Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Party Size' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'number', placeholder: '25 squares', disabled: true })\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components_Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Expiration Date' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'dattexte', placeholder: '1 day before', disabled: true })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Settings);\n\n//# sourceURL=webpack:///./src/views/setup/settings/Settings.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../squares-core/components */ \"./src/views/squares-core/components/index.js\");\n/* harmony import */ var _Settings_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Settings.scss */ \"./src/views/setup/settings/Settings.scss\");\n/* harmony import */ var _Settings_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Settings_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar prices = [1, 5, 10, 15, 20, 25];\n\nvar Amount = function Amount(_ref) {\n  var amount = _ref.amount;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { key: amount, className: 'settings-price' },\n    amount\n  );\n};\n\nvar Settings = function Settings() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'settings' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"Field\"],\n      { label: 'Bounty Amount' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'div',\n        { className: 'settings-wrapper' },\n        prices.map(function (a) {\n          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Amount, { amount: a });\n        })\n      )\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"Field\"],\n      { label: 'Party Size' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"TextInput\"], { type: 'number', placeholder: '25 squares', disabled: true })\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"Field\"],\n      { label: 'Expiration Date' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"TextInput\"], { type: 'dattexte', placeholder: '1 day before', disabled: true })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Settings);\n\n//# sourceURL=webpack:///./src/views/setup/settings/Settings.jsx?");
 
 /***/ }),
 
@@ -434,38 +308,165 @@ eval("\n\n//# sourceURL=webpack:///./src/views/setup/settings/Settings.scss?");
 
 /***/ }),
 
-/***/ "./src/views/setup/stepper/Stepper.jsx":
-/*!*********************************************!*\
-  !*** ./src/views/setup/stepper/Stepper.jsx ***!
-  \*********************************************/
+/***/ "./src/views/squares-core/components/Button/Button.jsx":
+/*!*************************************************************!*\
+  !*** ./src/views/squares-core/components/Button/Button.jsx ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../squares-core/components */ \"./src/squares-core/components/index.js\");\n/* harmony import */ var _Stepper_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stepper.scss */ \"./src/views/setup/stepper/Stepper.scss\");\n/* harmony import */ var _Stepper_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Stepper_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar icons = {\n  matches: 'matches',\n  settings: 'settings',\n  host: 'host',\n  preview: 'preview'\n};\n\nvar classes = {\n  current: 'selected',\n  done: 'finished',\n  disabled: 'disabled'\n};\n\nvar Step = function Step(_ref) {\n  var name = _ref.name,\n      status = _ref.status,\n      handleClick = _ref.handleClick;\n\n  var icon = { icons: icons, name: name };\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: classes[status] + ' step', onClick: function onClick() {\n        return handleClick(name);\n      } },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components__WEBPACK_IMPORTED_MODULE_1__[\"Icon\"], icon)\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref2) {\n  var step = _ref2.step,\n      onChange = _ref2.onChange;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'step-container' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Step, { handleClick: onChange, name: 'matches', status: 'current' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'divider' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Step, { handleClick: onChange, name: 'settings', status: 'disabled' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'divider' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Step, { handleClick: onChange, name: 'host', status: 'disabled' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'divider' }),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Step, { handleClick: onChange, name: 'preview', status: 'disabled' })\n  );\n});\n\n//# sourceURL=webpack:///./src/views/setup/stepper/Stepper.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Button_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button.scss */ \"./src/views/squares-core/components/Button/Button.scss\");\n/* harmony import */ var _Button_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Button_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var children = _ref.children;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'btn' },\n    children\n  );\n});\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Button/Button.jsx?");
 
 /***/ }),
 
-/***/ "./src/views/setup/stepper/Stepper.scss":
-/*!**********************************************!*\
-  !*** ./src/views/setup/stepper/Stepper.scss ***!
-  \**********************************************/
+/***/ "./src/views/squares-core/components/Button/Button.scss":
+/*!**************************************************************!*\
+  !*** ./src/views/squares-core/components/Button/Button.scss ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/views/setup/stepper/Stepper.scss?");
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Button/Button.scss?");
 
 /***/ }),
 
-/***/ "./src/views/setup/user/UserInfo.jsx":
-/*!*******************************************!*\
-  !*** ./src/views/setup/user/UserInfo.jsx ***!
-  \*******************************************/
+/***/ "./src/views/squares-core/components/Field/Field.jsx":
+/*!***********************************************************!*\
+  !*** ./src/views/squares-core/components/Field/Field.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _squares_core_components_TextInput_TextInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../squares-core/components/TextInput/TextInput */ \"./src/squares-core/components/TextInput/TextInput.jsx\");\n/* harmony import */ var _squares_core_components_Field_Field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../squares-core/components/Field/Field */ \"./src/squares-core/components/Field/Field.jsx\");\n\n\n\n\nvar User = function User() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'user' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components_Field_Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Payout Id' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components_TextInput_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'text', placeholder: '@toneloke', disabled: true })\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _squares_core_components_Field_Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Alias' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_squares_core_components_TextInput_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'text', placeholder: 'square display', disabled: true })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (User);\n\n//# sourceURL=webpack:///./src/views/setup/user/UserInfo.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Header */ \"./src/views/squares-core/components/Header/Header.jsx\");\n/* harmony import */ var _Field_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Field.scss */ \"./src/views/squares-core/components/Field/Field.scss\");\n/* harmony import */ var _Field_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Field_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar Field = function Field(_ref) {\n  var children = _ref.children,\n      type = _ref.type,\n      label = _ref.label;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'Field ' + type },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { name: label }),\n    children\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Field);\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Field/Field.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Field/Field.scss":
+/*!************************************************************!*\
+  !*** ./src/views/squares-core/components/Field/Field.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Field/Field.scss?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Header/Header.jsx":
+/*!*************************************************************!*\
+  !*** ./src/views/squares-core/components/Header/Header.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ \"moment\");\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.scss */ \"./src/views/squares-core/components/Header/Header.scss\");\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Header_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar Header = function Header(_ref) {\n  var name = _ref.name;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'header' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'label' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'div',\n        { className: 'team-name' },\n        name\n      )\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Header);\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Header/Header.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Header/Header.scss":
+/*!**************************************************************!*\
+  !*** ./src/views/squares-core/components/Header/Header.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Header/Header.scss?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Icon/Icon.jsx":
+/*!*********************************************************!*\
+  !*** ./src/views/squares-core/components/Icon/Icon.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Icon; });\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ \"prop-types\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nfunction Icon(_ref) {\n  var icons = _ref.icons,\n      name = _ref.name;\n\n  var icon = icons[name];\n  var findicon = function findicon() {\n    switch (icon) {\n      case 'matches':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      case 'settings':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      case 'preview':\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n      default:\n        {\n          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\n            'div',\n            null,\n            'icon'\n          );\n        }\n    }\n  };\n  var IconRenderer = findicon(icon);\n  return IconRenderer;\n}\n\nIcon.displayName = 'Icon';\nIcon.propTypes = {\n  icon: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.array, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string])\n};\nIcon.defaultProps = {\n  icon: null\n};\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Icon/Icon.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Match/Match.jsx":
+/*!***********************************************************!*\
+  !*** ./src/views/squares-core/components/Match/Match.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ \"moment\");\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Match_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Match.scss */ \"./src/views/squares-core/components/Match/Match.scss\");\n/* harmony import */ var _Match_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Match_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n// import PatriotsLogo from '../../../../../..fassets/patriots.svg';\n// import RamsLogo from '../../../../../assets/rams.svg';\n\n\nvar Team = function Team(_ref) {\n  var name = _ref.name;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'team-name' },\n    name\n  );\n};\n\nvar Match = function Match(_ref2) {\n  var scheduled = _ref2.scheduled,\n      broadcast = _ref2.broadcast,\n      scoring = _ref2.scoring,\n      home = _ref2.home,\n      away = _ref2.away;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'match' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'team-away' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Team, away)\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'span',\n      { className: 'info' },\n      '@'\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'team-home' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Team, home)\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      { className: 'info' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'span',\n        null,\n        moment__WEBPACK_IMPORTED_MODULE_1___default()(scheduled).format('MMMM Do, h:mm a')\n      ),\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n        'span',\n        null,\n        broadcast.network\n      )\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Match);\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Match/Match.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/Match/Match.scss":
+/*!************************************************************!*\
+  !*** ./src/views/squares-core/components/Match/Match.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/Match/Match.scss?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/TextInput/TextInput.jsx":
+/*!*******************************************************************!*\
+  !*** ./src/views/squares-core/components/TextInput/TextInput.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _TextInput_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextInput.scss */ \"./src/views/squares-core/components/TextInput/TextInput.scss\");\n/* harmony import */ var _TextInput_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TextInput_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n// NOTE: button is disabled unless needed in the future\nvar TextInput = function TextInput(props) {\n  var type = props.type;\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'Input-wrapper ' + type },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', props)\n  );\n};\n\nvar arePropsEqual = function arePropsEqual(prevProps, nextProps) {\n  return prevProps.value === nextProps.value;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react__WEBPACK_IMPORTED_MODULE_0__[\"memo\"])(TextInput, arePropsEqual));\n\n//# sourceURL=webpack:///./src/views/squares-core/components/TextInput/TextInput.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/TextInput/TextInput.scss":
+/*!********************************************************************!*\
+  !*** ./src/views/squares-core/components/TextInput/TextInput.scss ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/TextInput/TextInput.scss?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/User/UserInfo.jsx":
+/*!*************************************************************!*\
+  !*** ./src/views/squares-core/components/User/UserInfo.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _TextInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../TextInput */ \"./src/views/squares-core/components/TextInput/TextInput.jsx\");\n/* harmony import */ var _Field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Field */ \"./src/views/squares-core/components/Field/Field.jsx\");\n\n\n\n\nvar User = function User(_ref) {\n  var type = _ref.type;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'user' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Payout Id' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'text', placeholder: '@toneloke', disabled: true })\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      _Field__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n      { label: 'Alias' },\n      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TextInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { type: 'text', placeholder: 'square display', disabled: true })\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (User);\n\n//# sourceURL=webpack:///./src/views/squares-core/components/User/UserInfo.jsx?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/index.js":
+/*!****************************************************!*\
+  !*** ./src/views/squares-core/components/index.js ***!
+  \****************************************************/
+/*! exports provided: Button, Field, Header, Icon, Match, TextInput, User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ \"./src/views/squares-core/components/Button/Button.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Button\", function() { return _Button__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _Field__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Field */ \"./src/views/squares-core/components/Field/Field.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Field\", function() { return _Field__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ \"./src/views/squares-core/components/Header/Header.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Header\", function() { return _Header__WEBPACK_IMPORTED_MODULE_2__[\"default\"]; });\n\n/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icon */ \"./src/views/squares-core/components/Icon/Icon.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Icon\", function() { return _Icon__WEBPACK_IMPORTED_MODULE_3__[\"default\"]; });\n\n/* harmony import */ var _Match__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Match */ \"./src/views/squares-core/components/Match/Match.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Match\", function() { return _Match__WEBPACK_IMPORTED_MODULE_4__[\"default\"]; });\n\n/* harmony import */ var _TextInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TextInput */ \"./src/views/squares-core/components/TextInput/TextInput.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"TextInput\", function() { return _TextInput__WEBPACK_IMPORTED_MODULE_5__[\"default\"]; });\n\n/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./User */ \"./src/views/squares-core/components/User/UserInfo.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"User\", function() { return _User__WEBPACK_IMPORTED_MODULE_6__[\"default\"]; });\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/views/squares-core/components/index.js?");
+
+/***/ }),
+
+/***/ "./src/views/squares-core/components/match/Match.scss":
+/*!************************************************************!*\
+  !*** ./src/views/squares-core/components/match/Match.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/views/squares-core/components/match/Match.scss?");
 
 /***/ }),
 

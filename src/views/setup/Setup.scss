@@ -1,4 +1,4 @@
-@import '../../squares-core/styles/variables.scss';
+@import '../squares-core/styles/variables.scss';
 .setup {
   text-align: center;
   color: $text;
@@ -13,7 +13,7 @@
   overflow: hidden;
   .container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 80vh;
     color: $text;
     padding: 0 8px;
