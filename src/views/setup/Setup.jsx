@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import Matches from './matches'
 import Settings from './settings'
-import User from '../squares-core/components'
+import { User, Button } from '../squares-core/components'
 import { helpers, StaticContext } from '../../common';
 
 
@@ -28,8 +28,9 @@ const Setup = () => {
   return (
     <div className="setup">
       <div className="container">
-        <div role="button">Create SQuares</div>
+        <Button>SUBMIT</Button>
         <Settings />
+        <User type="HOST" />
         <Matches games={matches} />
       </div>
     </div>

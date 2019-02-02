@@ -1,11 +1,9 @@
 .Field {
   &-title {
-    font-weight: bolder;
     text-transform: uppercase;
     border-radius: 5px;
     width: 100%;
     align-self: center;
-    font-size: calc(18px + 2vmin);
-    padding-bottom: 8px;
+    margin: 6px 0;
   }
 }

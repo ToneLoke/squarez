@@ -6,12 +6,9 @@
 }
 .match{
   background-color: $primary;
-  margin: 10px;
   font-size: 18px;
   text-align: left;
-  @media screen and (max-width: $device-small) {
-    height: 90vh;
-  }
+  margin: 0 10px;
   .team {
     display: flex;
     flex-direction: column;
@@ -20,7 +17,6 @@
   }
   .info {
     @extend %secondary-text;
-    display: none;
   }
   .team-away, .team-home {
     background-color: #181818;

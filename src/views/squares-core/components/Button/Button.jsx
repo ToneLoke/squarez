@@ -1,8 +1,8 @@
 import React from 'react'
 import './Button.scss'
 
-export default ({ children }) => (
-  <div className="btn">
+export default ({ children, handleClick }) => (
+  <div className="btn" onClick={handleClick} role="button">
     { children }
   </div>
 )

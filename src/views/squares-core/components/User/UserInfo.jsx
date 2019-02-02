@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import TextInput from '../TextInput';
 import Field from '../Field';
 
-const User = ({ type }) => (
+const User = ({ input, type }) => (
   <div className="user">
-    <Field label="Payout Id">
-      <TextInput type="text" placeholder="@toneloke" disabled />
-    </Field>
-    <Field label="Alias">
-      <TextInput type="text" placeholder="square display" disabled />
+    <Field label={`${type} INFO`} type="title">
+      <TextInput type="text" placeholder="venmo name" />
+      <TextInput type="text" placeholder="alias" />
     </Field>
   </div>
 );
