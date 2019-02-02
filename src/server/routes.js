@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import data from '../common/sample.json';
+import data from '../common/superbowl';
 
 const apiRouter = Router();
 

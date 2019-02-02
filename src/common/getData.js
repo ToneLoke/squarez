@@ -10,7 +10,7 @@ const routes = [
     routes: [
       {
         loadData: getAllMatches,
-        path: '/setup',
+        path: '/',
         exact: true,
       },
       {

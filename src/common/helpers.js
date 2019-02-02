@@ -2,10 +2,11 @@ import axios from 'axios';
 
 //= ====================== API CALLS =======================
 const API_URL = 'http://api.sportradar.us/nfl/official/trial/v5/en/games/2018/PST/4/schedule.json?api_key=p3jrhz3b36atpuwr2d593jyq';
+const GET_WEEKLY_MATCHES = '/api/matches';
 // TODO: GET YEAR FROM TODAYS DATE
 // FIGURE OUT REG OR POST SEASON
 // GET NFL WEEK
-const getAllMatches = () => axios.get(API_URL).then(res => res.data);
+const getWeeklyMatches = () => axios.get(GET_WEEKLY_MATCHES).then(res => ({ matches: res.data }));
 const getSingleMatch = () => axios.get(API_URL).then(res => res.data);
 const getBoard = () => axios.get(API_URL).then(res => res.data);
 const createBoard = () => axios.get(API_URL).then(res => res.data);
@@ -35,5 +36,5 @@ const generateSquares = num => (square) => {
 };
 //= ====================== End Heloper Methods =======================
 export default {
-  getAllMatches, getSingleMatch, getBoard, generateSquares, createBoard, updateBoard,
+  getWeeklyMatches, getSingleMatch, getBoard, generateSquares, createBoard, updateBoard,
 }
