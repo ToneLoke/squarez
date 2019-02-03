@@ -16,7 +16,7 @@ const Settings = () => (
     <Field label="SQUARE PRICE" type="title">
       <div className="settings-wrapper">
         {prices.map(a => (
-          <Amount amount={a} />
+          <Amount key={`amount-${a}`} amount={a} />
         ))}
       </div>
     </Field>

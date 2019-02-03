@@ -14,7 +14,6 @@ const routes = [
         exact: true,
       },
       {
-        loadData: getBoard,
         path: '/board/:id',
         exact: true,
       },

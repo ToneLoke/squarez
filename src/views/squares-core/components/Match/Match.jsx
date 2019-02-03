@@ -15,7 +15,6 @@ const Match = ({
       <div className="team-away">
         <Team {...away} />
       </div>
-      <span className="info">@</span>
       <div className="team-home">
         <Team {...home} />
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { Link } from 'react-router-dom';
 import Matches from './matches'
 import Settings from './settings'
 import { User, Button } from '../squares-core/components'
@@ -28,7 +29,7 @@ const Setup = () => {
   return (
     <div className="setup">
       <div className="container">
-        <Button>SUBMIT</Button>
+        <Link to="/board/1">Submit</Link>
         <Settings />
         <User type="HOST" />
         <Matches games={matches} />

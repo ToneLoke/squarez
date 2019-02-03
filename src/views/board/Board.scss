@@ -1,70 +1,84 @@
-@import '../squares-core/styles/variables.scss';
-.board-container {
-  position: relative;
-  .board {
+@import "../squares-core/styles/variables.scss";
+.board-wrapper {
+    text-align: center;
+    color: $text;
+    height: 100vh;
+    width: 100vw;
+    background-color: $back;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
-    flex-wrap: wrap; // margin-top: -7px;
-    .cell {
-      //V1
-      // flex: 0 0 15%;
-      // display: flex;
-      // justify-content: flex-start;
-      // align-items: stretch;
-      // padding: 1px;
-      // box-sizing: border-box;
-      //V2
-      flex: 0 0 16%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: stretch;
-      padding: 2px;
-      box-sizing: border-box;
-      font-size: $cellFontSize;
-      & span {
-        font-size: calc(2px + 2vmin);
-      }
-      &:first-child {
-        visibility: hidden;
-      }
-      &:nth-child(-n+6)>.item,
-      &:nth-child(6n+7)>.item {
-        background: $cellHeaderBG;
-        font-size: $cellHeaderFontSize;
-        color: $text;
-        font-weight: bold;
-        padding-bottom: 2px;
-      }
-      &:before {
-        content: '';
-        display: table;
-        padding-top: 100%;
-      }
-      .item {
-        flex-grow: 1;
-        border: 1px solid $secondary;
-        background: $primary;
-        color: $text;
+    overflow: hidden;
+    .board-container {
+        position: relative;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        &.empty {
-          background: $primary;
-          // background: #e6ac00;
+        flex-direction: column;
+        height: 80vh;
+        color: $text;
+        padding: 0 8px;
+        width: 100%;
+        @media screen and (min-width: $device-small) {
+            flex-direction: column-reverse;
+            height: 90vh;
         }
-        &.pending {
-          background: #ffc61a;
+        .board {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap; // margin-top: -7px;
+            .cell {
+                flex: 0 0 16%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: stretch;
+                padding: 2px;
+                box-sizing: border-box;
+                font-size: $cellFontSize;
+                & span {
+                    font-size: calc(2px + 2vmin);
+                }
+                &:first-child {
+                    visibility: hidden;
+                }
+                &:nth-child(-n + 6) > .item,
+                &:nth-child(6n + 7) > .item {
+                    background: $cellHeaderBG;
+                    font-size: $cellHeaderFontSize;
+                    color: $text;
+                    font-weight: bold;
+                    padding-bottom: 2px;
+                }
+                &:before {
+                    content: "";
+                    display: table;
+                    padding-top: 100%;
+                }
+                .item {
+                    flex-grow: 1;
+                    border: 1px solid $secondary;
+                    background: $primary;
+                    color: $text;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &.empty {
+                        background: $primary;
+                        // background: #e6ac00;
+                    }
+                    &.pending {
+                        background: #ffc61a;
+                    }
+                    &.cancel {
+                        background: #ffc61a;
+                    }
+                    &.approved {
+                        background: #ffbf00;
+                    }
+                }
+            }
         }
-        &.cancel {
-          background: #ffc61a;
+        .game-detail {
+            padding-bottom: 20px;
         }
-        &.approved {
-          background: #ffbf00;
-        }
-      }
     }
-  }
-  .game-detail {
-    padding-bottom: 20px;
-  }
 }

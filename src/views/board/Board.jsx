@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { helpers } from '../../common';
 import './Board.scss';
-import '../squares-core/components/match/Match.scss';
-import { Match } from '../squares-core/components';
 
 const { generateSquares } = helpers;
 
@@ -39,20 +37,11 @@ const board = SquareRenderer(Square);
 
 const GameBoard = () => {
   const [squares, setSquares] = useState(board);
-
-  // TODO: dynamically create
-  const game = {
-    scheduled: '',
-    broadcast: '',
-    scoring: '',
-    home: { name: 'Los Angeles Rams' },
-    away: { name: 'New England Patriots' },
-  };
-
   return (
-    <div className="board-container">
-      <Match {...game} />
-      <div className="board">{squares}</div>
+    <div className="board-wrapper">
+      <div className="board-container">
+        <div className="board">{squares}</div>
+      </div>
     </div>
   );
 };

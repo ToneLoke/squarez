@@ -7,7 +7,6 @@ const Matches = ({ games }) => (
     <div className="wrapper">
       {games && games.map(game => <Match key={game.id} {...game} />)}
     </div>
-    {/* <div className="title">Select Event</div> */}
   </div>
 );
 

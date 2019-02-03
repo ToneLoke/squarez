@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Board from '../views/board';
 import Setup from '../views/setup';
-import '../Assets/sass/index.scss'
 import '../views/squares-core/styles/index.scss';
 
 export default function App() {
