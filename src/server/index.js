@@ -14,8 +14,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Mongoose Connection (messages is our database)
-mongoose.connect('mongodb://localhost/messages');
-
+// mongoose.connect('mongodb://localhost:27017/messages', { useNewUrlParser: true }, (err) => {
+//   if (err) console.log('ERROR CONNECTING TO MONGODB:', err);
+//   console.log('Connected to MongoDB');
+// });
+mongoose.connect('mongodb+srv://toneloke:fefe9999@project-red-pill-dev-ud2dy.mongodb.net/project_red_pill?retryWrites=true').then(() => {
+  console.log('Connected to Database');
+}).catch((err) => {
+  console.log('Not Connected to Database ERROR! ', err);
+});
 // API ROUTES
 app.use('/api', apiRouter);
 

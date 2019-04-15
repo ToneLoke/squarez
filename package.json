@@ -58,6 +58,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
+    "reset:server": "rm -rf ./node_modules package-lock.json && npm i",
     "build:client": "webpack --config webpack.client.config.js --watch",
     "build:server": "webpack --config webpack.server.config.js --watch",
     "start:server": "nodemon --watch bin bin/server.js",

@@ -24,7 +24,7 @@ export default function getData(path) {
   return (
     matches
       .filter(m => !!m.route.loadData)
-    //= ====================== grab all  =======================
+      //= ====================== grab all  =======================
       .map(m => m.route.loadData().catch(noOp))
   );
 }
